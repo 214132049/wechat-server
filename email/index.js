@@ -3,7 +3,9 @@ var config = require('../config')
 
 //配置邮件
 var transporter = nodemailer.createTransport({
-  host: config.email.host,
+  // host: config.email.host,
+  service: "qq",
+  port: 465,
   secureConnection: config.email.secureConnection,
   auth: config.email.auth
 });
@@ -11,7 +13,7 @@ var transporter = nodemailer.createTransport({
 var sendmail = function(data) {
   var option = {
     from: config.email.auth.user,
-    to: "leasing@l-region.com",
+    to: "214132049@qq.com",
     subject: "客户预约了，快来查看吧！",
     html: `<h1>预约客户信息:</h1><p>姓名：${data.username}</p><p>邮箱：${data.email}</p><p>手机号码：${data.tel}</p>`
   };
