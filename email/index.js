@@ -13,7 +13,7 @@ var transporter = nodemailer.createTransport({
 var sendmail = function(data) {
   var option = {
     from: config.email.auth.user,
-    to: "214132049@qq.com",
+    to: "leasing@l-region.com",
     subject: "客户预约了，快来查看吧！",
     html: `<h1>预约客户信息:</h1><p>姓名：${data.username}</p><p>邮箱：${data.email}</p><p>手机号码：${data.tel}</p>`
   };
