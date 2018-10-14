@@ -6,8 +6,8 @@
 		"prefix": "https://api.weixin.qq.com/cgi-bin/"
 	},
 	"email": {
-		"host":	"smtp.qq.com",
-		"secureConnection": true,
+		"host":	"ssl://smtp.qq.com",
+		"secure": true,
 		"auth": {
 			"user": "215803238@qq.com",
 			"pass": "zraknhytrldncbah"

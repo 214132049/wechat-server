@@ -3,10 +3,10 @@ var config = require('../config')
 
 //配置邮件
 var transporter = nodemailer.createTransport({
-  // host: config.email.host,
+  host: config.email.host,
   service: "qq",
   port: 465,
-  secureConnection: config.email.secureConnection,
+  secure: config.email.secure,
   auth: config.email.auth
 });
 //发送邮件
