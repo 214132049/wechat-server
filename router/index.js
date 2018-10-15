@@ -39,10 +39,10 @@ router.post("/api/sign", async (ctx, next) => {
   next();
 });
 
-router.post("/api/submit", async (ctx, next) => {
+router.get("/api/submit", async (ctx, next) => {
   //读取文件内容
+  var cb = ctx.request.query.callback
   var body = ctx.request.body;
-  console.log(body)
   var sheet = xlsx.parse(excel_file);
   var excelObj = sheet[0].data;
   if (excelObj.length == 0) {
@@ -53,8 +53,22 @@ router.post("/api/submit", async (ctx, next) => {
   await fs
     .writeFile(excel_file, buffer, { flag: "w" })
     .then(() => sendEmail(body))
-    .then(() => (ctx.body = { code: 1 }))
-    .catch(() => (ctx.body = { code: -1 }));
+    .then(() => {
+      if (cb) {
+        ctx.type = 'text';
+        ctx.body = cb + '(' + JSON.stringify({code: 1}) + ')'
+      } else {
+        ctx.body = {code: 1}
+      }
+    })
+    .catch(() => {
+      if (cb) {
+        ctx.type = 'text';
+        ctx.body = cb + '(' + JSON.stringify({code: -1}) + ')'
+      } else {
+        ctx.body = {code: -1}
+      }
+    });
 });
 
 module.exports = router
