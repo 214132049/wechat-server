@@ -12,7 +12,7 @@ var wechat = new Wechat(config.wechat);
 
 var excel_file = path.join(__dirname, "../data/record.xlsx");
 
-router.get('/', async (ctx, next) => {
+router.get('/api/', async (ctx, next) => {
   var signature = ctx.query.signature || ''
   var nonce = ctx.query.nonce || ''
   var timestamp = ctx.query.timestamp || ''
