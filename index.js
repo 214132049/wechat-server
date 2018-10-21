@@ -8,7 +8,7 @@ var app = new koa();
 app.use(koaBody({ multipart: true }));
 app.use(cors({
   origin: function (ctx) {
-    return "*"; 
+    return "http://www.l-region.com"; 
   },
   exposeHeaders: ['WWW-Authenticate', 'Server-Authorization'],
   maxAge: 5,
