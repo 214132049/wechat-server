@@ -7,10 +7,10 @@
 	},
 	"email": {
 		"host":	"smtp.163.com",
-		"port": 25,
-		"secure": false,
+		"port": 465,
+		"secure": true,
 		"auth": {
-			"user": "likoangjianfa@163.com",
+			"user": "likongjianfa@163.com",
 			"pass": "shouquan2018"
 		}
 	}
