@@ -39,7 +39,7 @@ router.post("/api/sign", async (ctx, next) => {
   next();
 });
 
-router.get("/api/submit", async (ctx, next) => {
+router.post("/api/submit", async (ctx, next) => {
   //读取文件内容
   var cb = ctx.request.query.callback
   var body = ctx.request.body;
