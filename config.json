@@ -6,11 +6,12 @@
 		"prefix": "https://api.weixin.qq.com/cgi-bin/"
 	},
 	"email": {
-		"host":	"ssl://smtp.qq.com",
-		"secure": true,
+		"host":	"smtp.163.com",
+		"port": 25,
+		"secure": false,
 		"auth": {
-			"user": "215803238@qq.com",
-			"pass": "zraknhytrldncbah"
+			"user": "likoangjianfa@163.com",
+			"pass": "shouquan2018"
 		}
 	}
 }
